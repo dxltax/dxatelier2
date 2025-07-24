@@ -3,28 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dxltax | Personal Site</title>
+  <title>dxltax | Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero">
-    <nav class="navbar glass">
-      <div class="logo">dxltax</div>
-      <ul class="nav-links">
-        <li><a href="writings.html">Writings</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="book.html" class="book-btn">Book Me</a></li>
-      </ul>
+  <div class="app-wrapper">
+    
+    <!-- Header -->
+    <header class="app-header glass">
+      <h1>dxltax</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <section class="card-grid">
+        <a href="writings.html" class="card">✍️ Writings</a>
+        <a href="portfolio.html" class="card">💼 Portfolio</a>
+        <a href="gallery.html" class="card">📸 Gallery</a>
+        <a href="book.html" class="card highlight">📩 Book Me</a>
+      </section>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="app-nav glass">
+      <a href="index.html" class="nav-item active">Home</a>
+      <a href="portfolio.html" class="nav-item">Portfolio</a>
+      <a href="book.html" class="nav-item">Book</a>
+      <a href="about.html" class="nav-item">About</a>
     </nav>
 
-    <div class="hero-content glass">
-      <h1>Crafting Websites That Feel Like Home</h1>
-      <p>Beautifully personal. Unapologetically yours.</p>
-      <a href="portfolio.html" class="cta">See My Work</a>
-    </div>
   </div>
 </body>
 </html>
