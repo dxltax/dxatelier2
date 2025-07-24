@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  background: url('assets/images/bg.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  margin: 1rem;
+  border-radius: 20px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #aad3ff;
+}
+
+.book-btn {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.hero-content {
+  text-align: center;
+  margin-bottom: 8vh;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
