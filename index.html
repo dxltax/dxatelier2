@@ -3,36 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dxltax | Home</title>
+  <title>My Writings</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-wrapper">
-    
-    <!-- Header -->
-    <header class="app-header glass">
-      <h1>Δ</h1>
-    </header>
 
-    <!-- Main Content -->
-    <main class="app-main">
-      <section class="card-grid">
-        <a href="writings.html" class="card">✍️ Writings</a>
-        <a href="portfolio.html" class="card">💼 Portfolio</a>
-        <a href="gallery.html" class="card">📸 Gallery</a>
-        <a href="book.html" class="card highlight">📩 Book Me</a>
-      </section>
-    </main>
+  <header>
+    <h1>📖 dxltax.writes</h1>
+    <p>My emotional archives</p>
+  </header>
 
-    <!-- Bottom Nav -->
-    <nav class="app-nav glass">
-      <a href="index.html" class="nav-item active">Home</a>
-      <a href="portfolio.html" class="nav-item">Portfolio</a>
-      <a href="book.html" class="nav-item">Book</a>
-      <a href="about.html" class="nav-item">About</a>
-    </nav>
+  <section class="filter-bar">
+    <div class="language-filter">
+      <input type="radio" name="lang" id="lang-all" checked />
+      <label for="lang-all">All</label>
+      <input type="radio" name="lang" id="lang-en" />
+      <label for="lang-en">English</label>
+      <input type="radio" name="lang" id="lang-id" />
+      <label for="lang-id">Indonesia</label>
+    </div>
+    <div class="status-filter">
+      <input type="radio" name="status" id="status-all" checked />
+      <label for="status-all">All</label>
+      <input type="radio" name="status" id="status-ongoing" />
+      <label for="status-ongoing">Ongoing</label>
+      <input type="radio" name="status" id="status-coming" />
+      <label for="status-coming">Coming Soon</label>
+      <input type="radio" name="status" id="status-completed" />
+      <label for="status-completed">Completed</label>
+    </div>
+  </section>
 
-  </div>
+  <main class="book-grid">
+
+    <!-- Book 1: Am I Not Worthy? -->
+    <article class="book-card english coming">
+      <div class="cover sad-theme">
+        <div class="rain"></div>
+        <h2>Am I Not Worthy?</h2>
+      </div>
+      <div class="details">
+        <p class="quote">"I gave my all, yet I was never enough."</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+    </article>
+
+    <!-- Book 2: Luka yang Tak Selesai -->
+    <article class="book-card indonesia coming">
+      <div class="cover drifting-theme">
+        <div class="paper"></div>
+        <h2>Luka yang Tak Selesai</h2>
+      </div>
+      <div class="details">
+        <p class="quote">"Kamu pergi tanpa menjelaskan, dan aku tinggal dengan semua pertanyaan."</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+    </article>
+
+  </main>
+
 </body>
 </html>
