@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#1a1a1a" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#111"/>
   <title>∆ — heartbreak archive</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json"/>
 </head>
 <body>
-  <header>
-    <h1 class="logo">∆</h1>
-    <button id="modeToggle" aria-label="Toggle Mode">🌙</button>
-  </header>
+  <div class="app-container">
+    
+    <!-- Top Bar -->
+    <header class="topbar">
+      <h1 class="logo">∆</h1>
+      <button id="modeToggle" title="Toggle theme">🌙</button>
+    </header>
 
-  <main>
-    <section class="filters">
-      <button data-filter="all">All</button>
-      <button data-filter="ongoing" class="active">Ongoing</button>
-      <button data-filter="completed">Completed</button>
-      <button data-filter="coming-soon">Coming Soon</button>
-    </section>
+    <!-- Filter Tabs -->
+    <nav class="tabs">
+      <button data-filter="ongoing" class="tab active">Ongoing</button>
+      <button data-filter="completed" class="tab">Completed</button>
+      <button data-filter="coming-soon" class="tab">Coming Soon</button>
+    </nav>
 
-    <section class="book-list">
+    <!-- Book List -->
+    <main class="book-container">
       <article class="book-card ongoing" onclick="window.location.href='books/what-happens-when-i-stop/index.html'">
-        <div class="cover animated-heartbreak">
-          <h2>What Happens When I Stop?</h2>
+        <div class="cover-glass heartbreak-glow">
+          <div class="title">What Happens When I Stop?</div>
         </div>
-        <div class="status">Ongoing</div>
       </article>
-      <!-- More books later -->
-    </section>
-  </main>
+      <!-- Tambah buku lainnya nanti -->
+    </main>
 
-  <footer>
-    <p>&copy; 2025 ∆ by @dxltax — All rights reserved.</p>
-  </footer>
+    <!-- Bottom Navigation -->
+    <footer class="bottombar">
+      <button onclick="alert('Home clicked')">🏠</button>
+      <button onclick="alert('Library clicked')">📚</button>
+      <button onclick="alert('Search clicked')">🔍</button>
+      <button onclick="alert('Profile clicked')">👤</button>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
