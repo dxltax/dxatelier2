@@ -3,46 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#111"/>
-  <title>∆ — heartbreak archive</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="manifest.json"/>
+  <title>∆ – heartbreak archive</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
 </head>
-<body>
-  <div class="app-container">
-    
-    <!-- Top Bar -->
-    <header class="topbar">
-      <h1 class="logo">∆</h1>
-      <button id="modeToggle" title="Toggle theme">🌙</button>
-    </header>
+<body class="light">
 
-    <!-- Filter Tabs -->
-    <nav class="tabs">
-      <button data-filter="ongoing" class="tab active">Ongoing</button>
-      <button data-filter="completed" class="tab">Completed</button>
-      <button data-filter="coming-soon" class="tab">Coming Soon</button>
-    </nav>
+  <!-- 🌙 Mode Switcher -->
+  <button id="modeToggle">🌙</button>
 
-    <!-- Book List -->
-    <main class="book-container">
-      <article class="book-card ongoing" onclick="window.location.href='books/what-happens-when-i-stop/index.html'">
-        <div class="cover-glass heartbreak-glow">
-          <div class="title">What Happens When I Stop?</div>
+  <!-- 📚 App Header -->
+  <header>
+    <h1>∆</h1>
+    <p>— a heartbreak collection —</p>
+    <div class="filters">
+      <button data-filter="all">All</button>
+      <button data-filter="ongoing">Ongoing</button>
+      <button data-filter="completed">Completed</button>
+      <button data-filter="coming-soon">Coming Soon</button>
+    </div>
+  </header>
+
+  <!-- 📝 Book Grid -->
+  <main class="book-grid">
+    <div class="book-card ongoing">
+      <a href="book.html">
+        <div class="animated-cover" data-mood="sad">
+          <!-- Cover is pure CSS animation (no images/emoji) -->
         </div>
-      </article>
-      <!-- Tambah buku lainnya nanti -->
-    </main>
+        <h2>What Happens When I Stop?</h2>
+        <p class="status">Ongoing</p>
+      </a>
+    </div>
+    <!-- Add more book cards here -->
+  </main>
 
-    <!-- Bottom Navigation -->
-    <footer class="bottombar">
-      <button onclick="alert('Home clicked')">🏠</button>
-      <button onclick="alert('Library clicked')">📚</button>
-      <button onclick="alert('Search clicked')">🔍</button>
-      <button onclick="alert('Profile clicked')">👤</button>
-    </footer>
-  </div>
+  <!-- 📄 Footer -->
+  <footer>
+    <p>&copy; 2025 ∆ — All rights reserved.</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
