@@ -1,0 +1,124 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #1e1e2f, #000);
+  color: #f2f2f2;
+  overflow-x: hidden;
+}
+
+/* Container */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* Header */
+.app-header {
+  padding: 2rem 1.2rem;
+  text-align: center;
+}
+.typewriter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  animation: typing 3s steps(40, end), blink .7s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #f06292;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Quote Section */
+.quote-section {
+  text-align: center;
+  margin: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+.quote-section blockquote {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.copy-btn {
+  background: #f06292;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.copy-btn:hover {
+  background: #d81b60;
+}
+
+/* Chapter Cards */
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+}
+.chapter-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+.chapter-card:hover {
+  transform: scale(1.02);
+}
+.chapter-card h3 {
+  font-size: 1.1rem;
+}
+.chapter-card p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+.chapter-card button {
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.chapter-card button:hover {
+  background: #6a1b9a;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.8rem 0;
+  backdrop-filter: blur(10px);
+}
+.bottom-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.bottom-nav a.active {
+  color: #f06292;
+}
