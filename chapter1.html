@@ -53,6 +53,9 @@
         link.download = "chapter1.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
+        content.style.background = originalBg;
+        content.style.backdropFilter = originalFilter;
+        content.style.webkitBackdropFilter = originalWebkit;
       });
     });
   </script>
