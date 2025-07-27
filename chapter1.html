@@ -1,25 +1,61 @@
-<h2>The Last Time You Replied<br><small style="font-weight: normal; font-size: 0.9rem; color: #aaa;">— from "What Happens When I Stop?"</small></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapter 1 – What Happens When I Stop?</title>
+  <link rel="stylesheet" href="chapter.css">
+</head>
+<body>
 
-<p>The short reply you gave that day<br>
-was the last I ever received.</p>
+  <div class="page-content" id="captureArea">
+    <h1>The Last Time You Replied<br><span class="subtitle">— from "What Happens When I Stop?"</span></h1>
 
-<p>Even after all the long messages I sent,<br>
-the pleading, the disappointment I poured out—<br>
-none of it moved you.<br>
-Not a single word made its way into your heart.</p>
+    <p>The short reply you gave that day<br>
+    was the last I ever received.</p>
 
-<p>I counted every second,<br>
-hoping that just once,<br>
-you would ask me to stay.<br>
-But you didn’t.</p>
+    <p>Even after all the long messages I sent,<br>
+    the pleading, the disappointment I poured out—<br>
+    none of it moved you.<br>
+    Not a single word made its way into your heart.</p>
 
-<p>Only silence,<br>
-dressed up as hope,<br>
-wore the mask of a response.</p>
+    <p>I counted every second,<br>
+    hoping that just once,<br>
+    you would ask me to stay.<br>
+    But you didn’t.</p>
 
-<p>And that’s when I knew.<br>
-That day… was the last.</p>
+    <p>Only silence,<br>
+    dressed up as hope,<br>
+    wore the mask of a response.</p>
 
-<div class="chapter-nav">
-  <button onclick="openChapter(2)">Next ➤</button>
-</div>
+    <p>And that’s when I knew.<br>
+    That day… was the last.</p>
+  </div>
+
+  <!-- 🔽 Navigasi -->
+  <div class="chapter-nav">
+    <button class="nav-button disabled" disabled>&larr; Back</button>
+    <a href="book.html" class="nav-button">Menu</a>
+    <a href="chapter1-2.html" class="nav-button">Next &rarr;</a>
+  </div>
+
+  <!-- 💾 Save as Image Button -->
+  <button id="saveImage" class="save-button">Save This Page</button>
+
+  <!-- 📸 html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    document.getElementById("saveImage").addEventListener("click", () => {
+      html2canvas(document.querySelector("#captureArea"), {
+        scale: 3
+      }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "chapter1.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
+
+</body>
+</html>
