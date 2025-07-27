@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>What Happens When I Stop?</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chapter.css"> <!-- Optional jika style chapter di sini juga dipakai -->
 </head>
-<body data-mood="sad" data-chapter="chapter-1">
+<body data-mood="sad">
 
-  <!-- 🔙 Back Home -->
+  <!-- 🌙 Mode Toggle -->
+  <button id="modeToggle">🌙</button>
+
+  <!-- 🔙 Back to Home -->
   <a href="index.html" class="back-button">← Back</a>
 
-  <!-- 📖 Book Title -->
+  <!-- 📖 Book Header -->
   <header class="book-header">
     <h1>What Happens When I Stop?</h1>
     <p>— A heartbreak series —</p>
@@ -30,25 +34,10 @@
     <button id="resetLikes">Reset</button>
   </div>
 
-  <!-- 📖 Chapter Viewer -->
+  <!-- 📖 Chapter Navigation -->
   <section class="chapters">
-    <button id="openChapter" class="open-chapter">📖 Read Chapter 1</button>
-
-    <!-- Modal Chapter -->
-    <div class="chapter-modal">
-      <button id="closeChapter" class="close">&times;</button>
-      <div class="modal-content">
-        <h2>Chapter 1: The Day I Let Go</h2>
-        <p>“If love means fighting every day to be enough, then maybe I’ve lost...”</p>
-
-        <!-- 💬 Comments -->
-        <div class="comments-section">
-          <input type="text" id="commentInput" placeholder="Leave a comment...">
-          <button id="commentSubmit">Submit</button>
-          <ul id="commentList"></ul>
-        </div>
-      </div>
-    </div>
+    <a href="chapter1.html" class="read-button">📖 Read Chapter 1</a>
+    <a href="chapter2.html" class="read-button">📖 Read Chapter 2</a> <!-- optional -->
   </section>
 
   <!-- ✍️ Author's Note -->
@@ -65,15 +54,15 @@
     <p>&copy; 2025 ∆ — All rights reserved.</p>
   </footer>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script src="book.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
-    // SAVE PAGE AS IMAGE
+    // 💾 Save page as image
     document.getElementById("saveImage").addEventListener("click", () => {
       html2canvas(document.body).then(canvas => {
         const link = document.createElement("a");
-        link.download = "chapter-screenshot.png";
+        link.download = "book-page.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
       });
