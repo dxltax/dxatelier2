@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What Happens When I Stop?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-mood="sad">
+
+  <!-- 🔙 Back Home -->
+  <a href="index.html" class="back-button">← Back</a>
+
+  <!-- 📖 Book Title -->
+  <header class="book-header">
+    <h1>What Happens When I Stop?</h1>
+    <p>— A heartbreak series —</p>
+  </header>
+
+  <!-- 🎧 Music Player -->
+  <div class="music-player">
+    <button id="toggleMusic">Play Music</button>
+    <audio id="bgMusic" src="assets/music/sad-instrumental.mp3" loop></audio>
+  </div>
+
+  <!-- ❤️ Heart Counter -->
+  <div class="heart-counter">
+    <button id="likeBtn">❤️ <span id="likeCount">0</span></button>
+    <button id="resetLikes">Reset</button>
+  </div>
+
+  <!-- 📖 Chapter Viewer -->
+  <section class="chapters">
+    <button class="open-chapter" data-target="ch1">Read Chapter 1</button>
+    <div class="chapter-modal" id="ch1">
+      <div class="modal-content">
+        <button class="close">&times;</button>
+        <h2>Chapter 1: The Day I Let Go</h2>
+        <p>“If love means fighting every day to be enough, then maybe I’ve lost...”</p>
+        <!-- 💬 Comments -->
+        <div class="comments-section">
+          <textarea placeholder="Leave a comment..."></textarea>
+          <button class="save-comment">Submit</button>
+          <div class="comments-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✍️ Author's Note -->
+  <section class="author-note">
+    <h2>Author's Note</h2>
+    <p>This piece was written in the middle of silence. If you're here reading this, thank you.</p>
+  </section>
+
+  <!-- 💾 Save Image -->
+  <button id="saveImage">📸 Save This Page</button>
+
+  <!-- 📄 Footer -->
+  <footer>
+    <p>&copy; 2025 ∆ — All rights reserved.</p>
+  </footer>
+
+  <script src="book.js"></script>
+</body>
+</html>
