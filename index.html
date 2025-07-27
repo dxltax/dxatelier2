@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>So, if I give up...</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- App Header -->
+    <header class="app-header">
+      <h1 class="typewriter-title">So, if I give up,<br>that really means we’re over, right?</h1>
+    </header>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <blockquote>"Maybe love isn’t enough, maybe timing was our only enemy."</blockquote>
+      <button class="copy-btn" onclick="copyQuote()">Copy Quote</button>
+    </section>
+
+    <!-- Chapter List -->
+    <section class="chapter-list">
+      <div class="chapter-card">
+        <h3>Chapter 1: When Silence Spoke Louder</h3>
+        <p>The loudest heartbreaks are often never said.</p>
+        <button onclick="openChapter(1)">Read</button>
+      </div>
+      <div class="chapter-card">
+        <h3>Chapter 2: I Stayed Until I Broke</h3>
+        <p>There’s a version of me that stayed too long.</p>
+        <button onclick="openChapter(2)">Read</button>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="#" class="active">Home</a>
+      <a href="#">Quotes</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
