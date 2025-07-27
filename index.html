@@ -3,38 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>∆ — So, if I give up</title>
+  <title>∆ — heartbreak archive</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="app-container">
-    <header class="app-bar">
-      <h1><span class="logo">∆</span><br><span class="title">So, if I give up,<br>that really means we’re over, right?</span></h1>
+    <header class="app-header">
+      <h1 class="logo">∆</h1>
+      <p class="tagline">a heartbreak archive by dxltax</p>
     </header>
 
-    <section class="quote-section">
-      <blockquote>"Sometimes, the loudest goodbye is the one never said."</blockquote>
-      <button onclick="copyQuote()">Copy Quote</button>
-    </section>
-
-    <section class="chapters">
-      <h2>Chapters</h2>
-      <div class="chapter-card">
-        <h3>Chapter 1: When Silence Spoke Louder</h3>
-        <p>What you didn’t say hurt more than anything you ever did.</p>
-        <button onclick="openChapter(1)">Read</button>
+    <section class="book-gallery">
+      <!-- Book 1 -->
+      <div class="book-card">
+        <h2 class="book-title">So, if I give up,<br>that really means we’re over, right?</h2>
+        <p class="book-meta">English • Ongoing</p>
+        <a href="/so-if-i-give-up/" class="btn-read">Read Book</a>
       </div>
-      <!-- More chapters can be added -->
+
+      <!-- Book Placeholder -->
+      <div class="book-card coming-soon">
+        <h2 class="book-title">My Next Book Title</h2>
+        <p class="book-meta">Coming Soon</p>
+        <button class="btn-disabled" disabled>Coming Soon</button>
+      </div>
     </section>
 
     <footer class="bottom-nav">
       <a href="#">Home</a>
-      <a href="#">Quotes</a>
-      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">∆</a>
     </footer>
 
-    <p class="copyright">© 2025 ∆ by @dxltax. All rights reserved.</p>
+    <p class="copyright">
+      © 2025 ∆ by @dxltax. All rights reserved.
+    </p>
   </div>
 </body>
 </html>
