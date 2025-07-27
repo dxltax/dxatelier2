@@ -33,7 +33,21 @@
     <a href="book.html" class="read-button">Read ↗</a>
   </div>
 </div>
+    <div style="margin-top: 1.5rem; text-align: center;">
+    <button onclick="openChapter(1)" class="read-button">Read Chapter 1</button>
+    <button onclick="openChapter(2)" class="read-button">Read Chapter 2</button>
+  </div>
+</div>
   </main>
+  <!-- 📖 Chapter Viewer (slide-in) -->
+<div id="chapterViewer" class="chapter-modal">
+  <div class="modal-content">
+    <button class="close" onclick="closeChapter()">×</button>
+    <div id="chapterContent">
+      <!-- Isi bab akan dimuat di sini -->
+    </div>
+  </div>
+</div>
 
   <!-- 📄 Footer -->
   <footer>
