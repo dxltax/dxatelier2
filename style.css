@@ -72,50 +72,84 @@ header h1 {
 }
 
 .book-card {
-  padding: 1rem;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--glass);
   border: 1px solid var(--border);
-  box-shadow: 0 6px 20px var(--shadow);
-  backdrop-filter: blur(20px);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
 .book-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.3); /* heartbreak pink glow */
 }
 
 .book-card h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin: 0.5rem 0;
+  color: var(--text);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .book-card .status {
-  font-size: 0.9rem;
-  opacity: 0.6;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  color: var(--text);
+  font-style: italic;
 }
 
 /* === ANIMATED COVER (FULL CODE) === */
 .animated-cover {
   width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
-  background: linear-gradient(120deg, #9d4edd, #f72585);
+  height: 180px;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff5f9e, #9d4edd);
   position: relative;
   overflow: hidden;
+  animation: breatheCover 8s infinite ease-in-out;
 }
-.animated-cover::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 10%, transparent 70%);
-  animation: pulse 4s infinite ease-in-out;
-  transform: rotate(45deg);
+
+@keyframes breatheCover {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.02); filter: brightness(1.1); }
 }
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.2); opacity: 0.4; }
+
+.read-button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.read-button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.book-card.ongoing {
+  border-left: 4px solid hotpink;
+}
+.book-card.completed {
+  border-left: 4px solid limegreen;
+}
+.book-card.comingsoon {
+  border-left: 4px solid gold;
 }
 
 /* === MODE TOGGLE === */
