@@ -2,46 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Delta’s Book Library</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>∆ — So, if I give up</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="main-container">
-    <header class="main-header">
-      <h1>📚 Delta’s Book Library</h1>
-      <p>Discover words that once saved a heart.</p>
+  <div class="app-container">
+    <header class="app-bar">
+      <h1><span class="logo">∆</span><br><span class="title">So, if I give up,<br>that really means we’re over, right?</span></h1>
     </header>
 
-    <!-- Filter Buttons -->
-    <div class="filter-bar">
-      <button class="filter active" onclick="filterBooks('all')">All</button>
-      <button class="filter" onclick="filterBooks('ongoing')">Ongoing</button>
-      <button class="filter" onclick="filterBooks('completed')">Completed</button>
-      <button class="filter" onclick="filterBooks('coming')">Coming Soon</button>
-    </div>
-
-    <!-- Book Cards -->
-    <section class="book-list">
-
-      <div class="book-card ongoing" data-status="ongoing">
-        <div class="animated-cover">
-          <div class="heartbeat-bg"></div>
-          <div class="title-overlay">So, if I give up...</div>
-        </div>
-        <div class="book-info">
-          <h2>So, if I give up, that really means we’re over, right?</h2>
-          <p class="status-tag">Ongoing</p>
-          <p class="hover-quote">"Some endings never needed closure, just honesty."</p>
-          <a href="books/so-if-i-give-up/index.html" class="read-btn">Read</a>
-        </div>
-      </div>
-
-      <!-- Tambahkan buku baru di sini nanti -->
-
+    <section class="quote-section">
+      <blockquote>"Sometimes, the loudest goodbye is the one never said."</blockquote>
+      <button onclick="copyQuote()">Copy Quote</button>
     </section>
-  </div>
 
-  <script src="script.js"></script>
+    <section class="chapters">
+      <h2>Chapters</h2>
+      <div class="chapter-card">
+        <h3>Chapter 1: When Silence Spoke Louder</h3>
+        <p>What you didn’t say hurt more than anything you ever did.</p>
+        <button onclick="openChapter(1)">Read</button>
+      </div>
+      <!-- More chapters can be added -->
+    </section>
+
+    <footer class="bottom-nav">
+      <a href="#">Home</a>
+      <a href="#">Quotes</a>
+      <a href="#">About</a>
+    </footer>
+
+    <p class="copyright">© 2025 ∆ by @dxltax. All rights reserved.</p>
+  </div>
 </body>
 </html>
