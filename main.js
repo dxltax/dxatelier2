@@ -53,19 +53,16 @@ function setMoodBackground() {
 setMoodBackground();
 
 // ========== CHAPTER VIEWER (from external file) ==========
-function openChapter(chapterFile) {
-  fetch(`chapters/${chapterFile}`)
-    .then(response => response.text())
+function openChapter(fileName) {
+  fetch(`chapters/${fileName}.html`)
+    .then(res => res.text())
     .then(html => {
       document.getElementById('chapterContent').innerHTML = html;
-      document.getElementById('chapterViewer').classList.add('active');
-    })
-    .catch(err => {
-      document.getElementById('chapterContent').innerHTML = `<p>Error loading chapter.</p>`;
-      document.getElementById('chapterViewer').classList.add('active');
+      document.getElementById('chapterViewer').classList.add('open');
     });
 }
 
 function closeChapter() {
-  document.getElementById('chapterViewer').classList.remove('active');
+  document.getElementById('chapterViewer').classList.remove('open');
+  document.getElementById('chapterContent').innerHTML = '';
 }
