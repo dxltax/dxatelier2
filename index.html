@@ -3,43 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>So, if I give up...</title>
+  <title>Delta’s Book Library</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <div class="app-container">
-    <!-- App Header -->
-    <header class="app-header">
-      <h1 class="typewriter-title">So, if I give up,<br>that really means we’re over, right?</h1>
+  <div class="main-container">
+    <header class="main-header">
+      <h1>📚 Delta’s Book Library</h1>
+      <p>Discover words that once saved a heart.</p>
     </header>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
-      <blockquote>"Maybe love isn’t enough, maybe timing was our only enemy."</blockquote>
-      <button class="copy-btn" onclick="copyQuote()">Copy Quote</button>
-    </section>
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter active" onclick="filterBooks('all')">All</button>
+      <button class="filter" onclick="filterBooks('ongoing')">Ongoing</button>
+      <button class="filter" onclick="filterBooks('completed')">Completed</button>
+      <button class="filter" onclick="filterBooks('coming')">Coming Soon</button>
+    </div>
 
-    <!-- Chapter List -->
-    <section class="chapter-list">
-      <div class="chapter-card">
-        <h3>Chapter 1: When Silence Spoke Louder</h3>
-        <p>The loudest heartbreaks are often never said.</p>
-        <button onclick="openChapter(1)">Read</button>
-      </div>
-      <div class="chapter-card">
-        <h3>Chapter 2: I Stayed Until I Broke</h3>
-        <p>There’s a version of me that stayed too long.</p>
-        <button onclick="openChapter(2)">Read</button>
-      </div>
-    </section>
+    <!-- Book Cards -->
+    <section class="book-list">
 
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-      <a href="#" class="active">Home</a>
-      <a href="#">Quotes</a>
-      <a href="#">About</a>
-    </nav>
+      <div class="book-card ongoing" data-status="ongoing">
+        <div class="animated-cover">
+          <div class="heartbeat-bg"></div>
+          <div class="title-overlay">So, if I give up...</div>
+        </div>
+        <div class="book-info">
+          <h2>So, if I give up, that really means we’re over, right?</h2>
+          <p class="status-tag">Ongoing</p>
+          <p class="hover-quote">"Some endings never needed closure, just honesty."</p>
+          <a href="books/so-if-i-give-up/index.html" class="read-btn">Read</a>
+        </div>
+      </div>
+
+      <!-- Tambahkan buku baru di sini nanti -->
+
+    </section>
   </div>
 
   <script src="script.js"></script>
