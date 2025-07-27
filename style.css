@@ -1,122 +1,96 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: #0d0d0d;
-  color: #f5f5f5;
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  padding: 1rem;
+  background: linear-gradient(145deg, #1e1e2e, #11111b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.filter-bar {
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1.5rem;
 }
 
-.filter-bar label {
-  margin-right: 0.5rem;
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cover {
+  text-align: center;
+  position: relative;
+}
+
+.animated-heart {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  background-color: red;
+  border-radius: 50%;
+  animation: beat 1s infinite ease-in-out;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.cover-caption {
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+.quotes blockquote {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  padding-left: 10px;
+  border-left: 3px solid #ff5f7e;
+  color: #ffbfcf;
+}
+
+button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  background-color: #ff5f7e;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff7c99;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  position: sticky;
+  bottom: 0;
   font-size: 0.9rem;
+}
+
+.bottom-nav a {
+  text-decoration: none;
   color: #ccc;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-.book-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-}
-
-/* Book Card */
-.book-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
-}
-.book-card:hover {
-  transform: scale(1.01);
-}
-.cover {
-  height: 180px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 1rem;
-}
-.details {
-  padding: 1rem;
-}
-.quote {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 0.5rem;
-}
-.badge {
-  background: #888;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-}
-
-/* === Animasi Khusus === */
-
-/* Sad Theme: Rain */
-.sad-theme {
-  background: linear-gradient(#2d2d3a, #1a1a22);
-  overflow: hidden;
-}
-.rain::before {
-  content: '';
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background-image: repeating-linear-gradient(
-    transparent 0px,
-    rgba(255,255,255,0.1) 2px,
-    transparent 4px
-  );
-  animation: rain 1s linear infinite;
-}
-@keyframes rain {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-/* Drifting Paper */
-.drifting-theme {
-  background: linear-gradient(#1e1e2f, #3a3a50);
-  overflow: hidden;
-}
-.paper::before {
-  content: '✉️';
-  font-size: 2rem;
-  position: absolute;
-  animation: float 5s ease-in-out infinite;
-}
-@keyframes float {
-  0% { transform: translate(0, 0); opacity: 0.3; }
-  50% { transform: translate(-20px, -30px); opacity: 1; }
-  100% { transform: translate(0, -60px); opacity: 0; }
+.bottom-nav a.active {
+  color: #ff5f7e;
 }
