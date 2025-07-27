@@ -2,42 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>∆ — heartbreak archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#1a1a1a" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <title>∆ — heartbreak archive</title>
 </head>
 <body>
-  <div class="app-container">
-    <header class="app-header">
-      <h1 class="logo">∆</h1>
-      <p class="tagline">a heartbreak archive by dxltax</p>
-    </header>
+  <header>
+    <h1 class="logo">∆</h1>
+    <button id="modeToggle" aria-label="Toggle Mode">🌙</button>
+  </header>
 
-    <section class="book-gallery">
-      <!-- Book 1 -->
-      <div class="book-card">
-        <h2 class="book-title">So, if I give up,<br>that really means we’re over, right?</h2>
-        <p class="book-meta">English • Ongoing</p>
-        <a href="/so-if-i-give-up/" class="btn-read">Read Book</a>
-      </div>
-
-      <!-- Book Placeholder -->
-      <div class="book-card coming-soon">
-        <h2 class="book-title">My Next Book Title</h2>
-        <p class="book-meta">Coming Soon</p>
-        <button class="btn-disabled" disabled>Coming Soon</button>
-      </div>
+  <main>
+    <section class="filters">
+      <button data-filter="all">All</button>
+      <button data-filter="ongoing" class="active">Ongoing</button>
+      <button data-filter="completed">Completed</button>
+      <button data-filter="coming-soon">Coming Soon</button>
     </section>
 
-    <footer class="bottom-nav">
-      <a href="#">Home</a>
-      <a href="#">Contact</a>
-      <a href="#">∆</a>
-    </footer>
+    <section class="book-list">
+      <article class="book-card ongoing" onclick="window.location.href='books/what-happens-when-i-stop/index.html'">
+        <div class="cover animated-heartbreak">
+          <h2>What Happens When I Stop?</h2>
+        </div>
+        <div class="status">Ongoing</div>
+      </article>
+      <!-- More books later -->
+    </section>
+  </main>
 
-    <p class="copyright">
-      © 2025 ∆ by @dxltax. All rights reserved.
-    </p>
-  </div>
+  <footer>
+    <p>&copy; 2025 ∆ by @dxltax — All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
