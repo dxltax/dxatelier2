@@ -1,0 +1,110 @@
+/* === Chapter Modal Background === */
+.chapter-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.4s ease;
+}
+
+.chapter-modal.open {
+  display: flex;
+}
+
+/* === Chapter Modal Content Box === */
+.modal-content {
+  background: #1a1a2e;
+  color: #f0f0f0;
+  padding: 2rem;
+  max-width: 640px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  position: relative;
+  animation: slideLeft 0.4s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Close Button === */
+.modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* === Typography === */
+.modal-content h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #ffb6c1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.modal-content p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+/* === Chapter Navigation === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.chapter-nav button,
+.read-button {
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 105, 135, 0.15);
+  color: hotpink;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.chapter-nav button:hover,
+.read-button:hover {
+  background: hotpink;
+  color: white;
+}
+
+/* === Optional: Scrollbar Styling (modern browser) === */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 105, 135, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: hotpink;
+}
