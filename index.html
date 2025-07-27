@@ -1,219 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dxltax.writes</title>
-  <style>
-    /* --- CSS RESET & BASE --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #0d0d0d;
-      color: #f5f5f5;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 1rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .filter-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .filter-group button {
-      background: #1a1a1a;
-      color: #ccc;
-      border: 1px solid #333;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: 0.2s;
-      font-size: 0.85rem;
-    }
-    .filter-group button.active {
-      background: #444;
-      color: #fff;
-      border-color: #666;
-    }
-
-    .book-grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: 1fr;
-    }
-
-    .book-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 1rem;
-      overflow: hidden;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-    .book-card:hover {
-      transform: scale(1.01);
-    }
-
-    .cover {
-      height: 180px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .details {
-      padding: 1rem;
-    }
-    .quote {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin-bottom: 0.5rem;
-    }
-    .badge {
-      background: #888;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-    }
-
-    /* Sad Cover Theme */
-    .sad-theme {
-      background: linear-gradient(#2d2d3a, #1a1a22);
-      overflow: hidden;
-    }
-    .rain::before {
-      content: '';
-      position: absolute;
-      width: 120%;
-      height: 100%;
-      background-image: repeating-linear-gradient(
-        transparent 0px,
-        rgba(255,255,255,0.1) 2px,
-        transparent 4px
-      );
-      animation: rain 1s linear infinite;
-    }
-    @keyframes rain {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
-    }
-
-    /* Paper Float */
-    .drifting-theme {
-      background: linear-gradient(#1e1e2f, #3a3a50);
-      overflow: hidden;
-    }
-    .paper::before {
-      content: '✉️';
-      font-size: 2rem;
-      position: absolute;
-      animation: float 5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      50% { transform: translate(-20px, -30px); opacity: 1; }
-      100% { transform: translate(0, -60px); opacity: 0; }
-    }
-
-    /* Responsive */
-    @media (min-width: 600px) {
-      .book-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>So, if I give up...</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Δ</h1>
-    <p>My emotional archives</p>
-  </header>
+  <div class="app-container">
+    <!-- Header Title -->
+    <header class="glass header">
+      <h1>So, if I give up,<br>are we really done?</h1>
+      <p class="subtext">A heartbreak piece by Delta</p>
+    </header>
 
-  <!-- Filters -->
-  <section class="filter-bar">
-    <div class="filter-group" id="lang-filter">
-      <button class="active" data-lang="all">All</button>
-      <button data-lang="english">English</button>
-      <button data-lang="indonesia">Indonesia</button>
-    </div>
-    <div class="filter-group" id="status-filter">
-      <button class="active" data-status="all">All</button>
-      <button data-status="ongoing">Ongoing</button>
-      <button data-status="coming">Coming Soon</button>
-      <button data-status="completed">Completed</button>
-    </div>
-  </section>
+    <!-- Animated Cover -->
+    <section class="glass cover">
+      <div class="animated-heart"></div>
+      <p class="cover-caption">"I tried to stay. But you made leaving feel like the only option."</p>
+    </section>
 
-  <!-- Book Grid -->
-  <main class="book-grid">
+    <!-- Quote Generator -->
+    <section class="glass quotes">
+      <h2>Random Quote</h2>
+      <blockquote id="quote-box">Click the button to see a quote</blockquote>
+      <button onclick="showQuote()">Show me a line</button>
+    </section>
 
-    <!-- Book 1 -->
-    <article class="book-card" data-lang="english" data-status="ongoing">
-      <div class="cover sad-theme">
-        <div class="rain"></div>
-        <h2>Am I Not Worthy?</h2>
-      </div>
-      <div class="details">
-        <p class="quote">"I gave my all, yet I was never enough."</p>
-        <span class="badge">Ongoing</span>
-      </div>
-    </article>
+    <!-- Navigation -->
+    <nav class="bottom-nav glass">
+      <a href="#" class="active">Home</a>
+      <a href="#">Quotes</a>
+      <a href="#">About</a>
+      <a href="#">All Books</a>
+    </nav>
+  </div>
 
-  </main>
-
-  <!-- Filter JS -->
-  <script>
-    const langButtons = document.querySelectorAll('#lang-filter button');
-    const statusButtons = document.querySelectorAll('#status-filter button');
-    const cards = document.querySelectorAll('.book-card');
-
-    let selectedLang = 'all';
-    let selectedStatus = 'all';
-
-    langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        langButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedLang = btn.dataset.lang;
-        filterBooks();
-      });
-    });
-
-    statusButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        statusButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedStatus = btn.dataset.status;
-        filterBooks();
-      });
-    });
-
-    function filterBooks() {
-      cards.forEach(card => {
-        const cardLang = card.dataset.lang;
-        const cardStatus = card.dataset.status;
-        const matchLang = selectedLang === 'all' || cardLang === selectedLang;
-        const matchStatus = selectedStatus === 'all' || cardStatus === selectedStatus;
-        card.style.display = matchLang && matchStatus ? 'block' : 'none';
-      });
-    }
-  </script>
-
+  <script src="quotes.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
