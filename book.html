@@ -6,7 +6,7 @@
   <title>What Happens When I Stop?</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-mood="sad">
+<body data-mood="sad" data-chapter="chapter-1">
 
   <!-- 🔙 Back Home -->
   <a href="index.html" class="back-button">← Back</a>
@@ -19,29 +19,33 @@
 
   <!-- 🎧 Music Player -->
   <div class="music-player">
-    <button id="toggleMusic">Play Music</button>
+    <button id="musicToggle">Play Music</button>
     <audio id="bgMusic" src="assets/music/sad-instrumental.mp3" loop></audio>
   </div>
 
   <!-- ❤️ Heart Counter -->
   <div class="heart-counter">
-    <button id="likeBtn">❤️ <span id="likeCount">0</span></button>
+    <button id="heartBtn">❤️ Love</button>
+    <span id="heartCount">0</span>
     <button id="resetLikes">Reset</button>
   </div>
 
   <!-- 📖 Chapter Viewer -->
   <section class="chapters">
-    <button class="open-chapter" data-target="ch1">Read Chapter 1</button>
-    <div class="chapter-modal" id="ch1">
+    <button id="openChapter" class="open-chapter">📖 Read Chapter 1</button>
+
+    <!-- Modal Chapter -->
+    <div class="chapter-modal">
+      <button id="closeChapter" class="close">&times;</button>
       <div class="modal-content">
-        <button class="close">&times;</button>
         <h2>Chapter 1: The Day I Let Go</h2>
         <p>“If love means fighting every day to be enough, then maybe I’ve lost...”</p>
+
         <!-- 💬 Comments -->
         <div class="comments-section">
-          <textarea placeholder="Leave a comment..."></textarea>
-          <button class="save-comment">Submit</button>
-          <div class="comments-list"></div>
+          <input type="text" id="commentInput" placeholder="Leave a comment...">
+          <button id="commentSubmit">Submit</button>
+          <ul id="commentList"></ul>
         </div>
       </div>
     </div>
@@ -61,6 +65,19 @@
     <p>&copy; 2025 ∆ — All rights reserved.</p>
   </footer>
 
+  <!-- Script -->
   <script src="book.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    // SAVE PAGE AS IMAGE
+    document.getElementById("saveImage").addEventListener("click", () => {
+      html2canvas(document.body).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "chapter-screenshot.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
 </body>
 </html>
