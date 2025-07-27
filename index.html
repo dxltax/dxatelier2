@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>∆ – heartbreak archive</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
 <body class="light">
@@ -24,30 +24,32 @@
     </div>
   </header>
 
-  <!-- 📝 Book Grid -->
- <main class="book-gallery">
-  <div class="book-cover-animated heartbreak" onclick="location.href='book.html'">
-    <div class="overlay">
-      <h2 class="title">What Happens<br>When I Stop?</h2>
-      <p class="status">Ongoing</p>
-    <a href="book.html" class="read-button">Read ↗</a>
-  </div>
-</div>
+  <!-- 📝 Book Cover -->
+  <main class="book-gallery">
+    <div class="book-cover-animated heartbreak">
+      <div class="overlay">
+        <h2 class="title">What Happens<br>When I Stop?</h2>
+        <p class="status">Ongoing</p>
+        <a href="book.html" class="read-button">Read ↗</a>
+      </div>
+    </div>
+
+    <!-- 📖 Chapter Buttons -->
     <div style="margin-top: 1.5rem; text-align: center;">
-    <button onclick="openChapter(1)" class="read-button">Read Chapter 1</button>
-    <button onclick="openChapter(2)" class="read-button">Read Chapter 2</button>
-  </div>
-</div>
+      <button onclick="openChapter('chapter1.html')" class="read-button">Read Chapter 1</button>
+      <button onclick="openChapter('chapter2.html')" class="read-button">Read Chapter 2</button>
+    </div>
   </main>
-  <!-- 📖 Chapter Viewer (slide-in) -->
-<div id="chapterViewer" class="chapter-modal">
-  <div class="modal-content">
-    <button class="close" onclick="closeChapter()">×</button>
-    <div id="chapterContent">
-      <!-- Isi bab akan dimuat di sini -->
+
+  <!-- 📖 Chapter Viewer (slide-in modal) -->
+  <div id="chapterViewer" class="chapter-modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeChapter()">×</button>
+      <div id="chapterContent">
+        <!-- Isi bab akan dimuat di sini -->
+      </div>
     </div>
   </div>
-</div>
 
   <!-- 📄 Footer -->
   <footer>
